@@ -1,8 +1,8 @@
 {
   "number": "09",
   "name": "IRS.gov",
-  "brand": "GIF.gov",
-  "notice": "A layout study, not IRS.gov and not a government website: three IRS pages rebuilt with Golden Grids as GIF.gov, a parody name for the site. Not affiliated with the IRS; nothing here signs in, files or pays.",
+  "brand": "GIF;gov",
+  "notice": "A layout study, not IRS.gov and not a government website: three IRS pages rebuilt with Golden Grids as GIF;gov, a parody name for the site. Not affiliated with the IRS; nothing here signs in, files or pays.",
   "pages": {
     "account": "Online account for individuals",
     "index": "Home",
@@ -29,7 +29,7 @@
     "The limits, fees and dates, as those pages gave them on the day they were captured. They may have changed; check IRS.gov."
   ],
   "invented": [
-    "The site. GIF.gov is a parody name made for this study; it is not an agency, and this is not a government website.",
+    "The site. GIF;gov is a parody name made for this study; it is not an agency, and this is not a government website.",
     "The controls. There is no sign-in, account creation, payment or app download anywhere in the study, not even an inert one, and the only field is the header's search box, which sends nothing. Where the reference has such a control, a line of plain text says what IRS.gov offers there, and a link to another of the study's pages carries that page's name.",
     "Some names and headings. The reference's Make a payment is named Payments, its Do more with an IRS account is What an account holds, its two bank-account cards are named Online account and Direct Pay, and its account section headings (Access tax records, Make and view payments) are given as nouns.",
     "The icons, which were drawn for the study. No IRS seal, logo or mark is used."

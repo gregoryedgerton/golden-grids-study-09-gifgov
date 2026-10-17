@@ -6,7 +6,7 @@ Guidance for agents working in a Golden Grids layout study.
 
 Study 09: three pages of IRS.gov — home, Make a payment (the study's
 Payments), Online account for individuals — rebuilt as stacked golden grids
-under the GIF.gov brand. Read "Safe Browsing remediation (2026-10)" at the
+under the GIF;gov brand. Read "Safe Browsing remediation (2026-10)" at the
 end of this file before changing any copy or control.
 THREE pages (`index.html`, `payments.html`, `account.html`), Vite entries
 with plain links. `src/lib/Page.tsx` is the shell (banner, brand bar,
@@ -157,7 +157,7 @@ README: the smallest line, and that no screen-reader user has tested it.
   create an account, pay, check a refund or get a PIN, give the same facts
   as description.
 - NOT a government website, and it must never look like one: the banner at
-  the top says so on every page; the brand is GIF.gov; no IRS seal, logo
+  the top says so on every page; the brand is GIF;gov; no IRS seal, logo
   or mark, no "official website" banner, no lock or https explainer. There
   is no control that signs in, pays, downloads or submits, not even an
   inert one that says so: where the reference has one, a line of plain text
@@ -218,7 +218,7 @@ Two geometry rules, verified against source, that every band relies on:
 ## Brand
 
 - **The study's brand is a parody name**: `GIF` in capitals, then the tail of
-  the reference's name in lower case (GIFbnb, GIFspn, GIFflix, GIF.gov, GIFx,
+  the reference's name in lower case (GIFbnb, GIFspn, GIFflix, GIF;gov, GIFx,
   GIFbase, GIFmutual, GIFn'now, GIFbell, GIFipedia, GIFify, GIFmilk Records).
   Do not use GIFcommit as
   a service's name; it is only the npm scope of the library.
@@ -300,7 +300,7 @@ theme, so the bar in this study is high.
 - The account page's "Sign in or create account" button is gone; in its
   place `AccountIntro` (`src/lib/modules.tsx`) prints `ACCOUNT.where`, a line
   of plain text: on IRS.gov this is where the online account begins, and
-  GIF.gov has no accounts and asks for no information.
+  GIF;gov has no accounts and asks for no information.
 - The home hero's "Create account" button is a plain text link to the
   study's account page, labelled with the page's name (`HERO.page`), and the
   headline is "What an account holds" (the reference's is "Do more with an
@@ -330,7 +330,7 @@ theme, so the bar in this study is high.
   `StudyDisclosure`) says why ("Why nothing here links to IRS.gov"); the
   README keeps the addresses. Check with
   `grep -rnE "\.gov/|https?://[a-z.]*\.gov" dist` after building (the wordmark
-  text "GIF.gov" is not an address).
+  text "GIF;gov" is not an address).
 
 **Never bring back**, in this study or a sibling: a sign-in, create-account,
 pay, guest-pay, app-download or form-submit control, even an inert one
@@ -344,3 +344,4 @@ closing disclosure stay. After deploying, Greg requests a review in Google
 Search Console (Security Issues) so the flag is lifted.
 
 - **Address (2026-10-17, Greg).** The repository moved from `golden-grids-study-09-irs` to `golden-grids-study-09-gifgov`, so the reference's name is no longer in the study's web address (a step against the Safe Browsing flag on the shared origin); the old address no longer serves anything.
+- **Name (2026-10-17, Greg).** The parody name is GIF;gov, a semicolon in place of the dot ("make it GIF;gov swapping the dot for the semi-colon"), so the name no longer reads as a .gov address. It was GIF.gov. The icons and share card were redrawn with it.

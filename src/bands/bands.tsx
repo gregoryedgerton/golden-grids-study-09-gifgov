@@ -110,7 +110,7 @@ export function BankBand({ account, guest, numbers, title, body }: {
       <FactBox imprint={<Imprint name={key === "account" ? "account" : "guest"} />} label={c.tag ?? c.sub} fitClass="fit--head" max={120}
         body={<><p className="box__body--short box__body--untall">{c.features[0]}. {c.accepted}.</p><ul className="box__body--long box__body--tall box__list">{c.features.map((f) => <li key={f}>{f}</li>)}<li><strong>{c.accepted}</strong></li></ul></>}
         source={c.where}
-        expand={{ group: x, slotKey: key, title: c.title, full: <div className="cell__body"><p className="cell__kicker">Key features</p><ul>{c.features.map((f) => <li key={f}>{f}</li>)}</ul><p><strong>Tax payments accepted:</strong> {c.accepted}.</p><p className="note">{c.where}. GIF.gov takes no payments and asks for no information.</p></div> }}>
+        expand={{ group: x, slotKey: key, title: c.title, full: <div className="cell__body"><p className="cell__kicker">Key features</p><ul>{c.features.map((f) => <li key={f}>{f}</li>)}</ul><p><strong>Tax payments accepted:</strong> {c.accepted}.</p><p className="note">{c.where}. GIF;gov takes no payments and asks for no information.</p></div> }}>
         {c.title}
       </FactBox>
     </GoldenBox>

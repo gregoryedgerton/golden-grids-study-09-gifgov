@@ -7,7 +7,7 @@
  * appears. Where the reference invites the reader to sign in, create an
  * account, pay, check a refund or get a PIN, the text is recast as a
  * description of what the reference offers; the facts are unchanged. The
- * shell is GIF.gov's, a layout study's, and says so: this is not a
+ * shell is GIF;gov's, a layout study's, and says so: this is not a
  * government website, and there is no sign-in, payment, download or form.
  */
 
@@ -52,7 +52,7 @@ export const HERO: { title: string; label: string; body: string; page: string; f
     title: "All your info in one app",
     body: "Tax records, refund status, payments, balance and digital notices, in one app.",
     holds: ["Tax records", "Refund status", "Payments", "Balance", "Digital notices"],
-    note: "On IRS.gov this card leads to the IRS's mobile app. GIF.gov has no app, and nothing here downloads.",
+    note: "On IRS.gov this card leads to the IRS's mobile app. GIF;gov has no app, and nothing here downloads.",
   },
 };
 
@@ -145,7 +145,7 @@ export const ACCOUNT: {
   crumbs: ["Home", "File", "Individuals", "Your information"],
   notice: { title: "New: Form 4547, Trump Account Election(s)", body: "A Trump Account election can be submitted with Form 4547 in the online account, where its status is also shown." },
   intro: "The online account holds an individual's account information, including balance, payments, tax records and more.",
-  where: "On IRS.gov this is where the online account begins, and a new user's identity is verified with photo identification. GIF.gov has no accounts and asks for no information.",
+  where: "On IRS.gov this is where the online account begins, and a new user's identity is verified with photo identification. GIF;gov has no accounts and asks for no information.",
   side: ["Who should file", "Steps to file your taxes", "File your tax return", "Get an extension", "Amend return", "Your information", "Life events", "Students", "Employees", "Parents", "Military", "Seniors and retirees"],
   features: [
     { id: "records", icon: "records", title: "Tax records", line: "Tax\nrecords", items: ["Key tax return information, including adjusted gross income, and transcripts or a tax compliance report", "The status of a refund or an amended return", "Digital notices from the IRS", "Audit status (currently available for certain audits conducted by mail)", "Information return documents, such as Forms W-2 and certain 1099s"] },

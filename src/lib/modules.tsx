@@ -18,7 +18,7 @@ export function AppCard() {
     <section className="card card--app" aria-labelledby="app-title">
       <h2 id="app-title">{HERO.app.title}</h2>
       <p>{HERO.app.body}</p>
-      <div className="card__phone" aria-hidden="true"><span>GIF.gov</span>{HERO.app.holds.map((h) => <span key={h} className="card__phone-line">{h}</span>)}</div>
+      <div className="card__phone" aria-hidden="true"><span>GIF;gov</span>{HERO.app.holds.map((h) => <span key={h} className="card__phone-line">{h}</span>)}</div>
       <p className="note">{HERO.app.note}</p>
     </section>
   );

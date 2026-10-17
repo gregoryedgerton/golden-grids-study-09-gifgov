@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "Golden Grids layout study 09: three pages of IRS.gov (home, Payments, Online account for individuals) as stacked golden grids, under the GIF.gov brand, with the public-domain content attributed.",
+  "description": "Golden Grids layout study 09: three pages of IRS.gov (home, Payments, Online account for individuals) as stacked golden grids, under the GIF;gov brand, with the public-domain content attributed.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

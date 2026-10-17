@@ -1,13 +1,13 @@
 GIFcommit00008
 
-# Layout study — three pages of IRS.gov, as GIF.gov
+# Layout study — three pages of IRS.gov, as GIF;gov
 
 **Live:** [`https://gregoryedgerton.github.io/golden-grids-study-09-gifgov/`](https://gregoryedgerton.github.io/golden-grids-study-09-gifgov/)
 
 An unaffiliated layout study. It rebuilds the structure of three pages of
 IRS.gov — the [home page](https://www.irs.gov/), [Make a payment](https://www.irs.gov/payments)
 and [Online account for individuals](https://www.irs.gov/payments/online-account-for-individuals)
-— as stacked golden grids under the GIF.gov brand. The text is the
+— as stacked golden grids under the GIF;gov brand. The text is the
 Internal Revenue Service's own, a work of the United States government in
 the public domain (17 U.S.C. §105), shortened and rearranged and named on
 its page; the shell says on every page that this is not a government
