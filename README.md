@@ -2,7 +2,7 @@ GIFcommit00008
 
 # Layout study — three pages of IRS.gov, as GIF.gov
 
-**Live:** [`https://gregoryedgerton.github.io/golden-grids-study-09-irs/`](https://gregoryedgerton.github.io/golden-grids-study-09-irs/)
+**Live:** [`https://gregoryedgerton.github.io/golden-grids-study-09-gifgov/`](https://gregoryedgerton.github.io/golden-grids-study-09-gifgov/)
 
 An unaffiliated layout study. It rebuilds the structure of three pages of
 IRS.gov — the [home page](https://www.irs.gov/), [Make a payment](https://www.irs.gov/payments)
@@ -170,3 +170,5 @@ npm run dev
 `npm run build` type-checks and builds to `dist/`; pushing to `main` deploys
 to GitHub Pages. The library is consumed from npm at its published version,
 never linked locally.
+
+- **Address (2026-10-17, Greg).** The repository moved from `golden-grids-study-09-irs` to `golden-grids-study-09-gifgov`, so the reference's name is no longer in the study's web address (a step against the Safe Browsing flag on the shared origin); the old address no longer serves anything.

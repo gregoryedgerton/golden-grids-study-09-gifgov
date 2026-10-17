@@ -16,7 +16,7 @@ grids (`FactsBand`, `HeroBand`, `BankBand`, `FeaturesBand`);
 `captures/reference-*.txt` is each page's main text as captured. Read
 `docs/program/PROGRAM.md`, then `STUDY-BRIEF.md`, then `README.md`.
 
-Live at https://gregoryedgerton.github.io/golden-grids-study-09-irs/;
+Live at https://gregoryedgerton.github.io/golden-grids-study-09-gifgov/;
 pushing to `main` deploys.
 
 ## Rules that are not negotiable
@@ -342,3 +342,5 @@ account"); an "An official website of the United States government" banner,
 a lock or https explainer, or anything seal-like. The study banner and the
 closing disclosure stay. After deploying, Greg requests a review in Google
 Search Console (Security Issues) so the flag is lifted.
+
+- **Address (2026-10-17, Greg).** The repository moved from `golden-grids-study-09-irs` to `golden-grids-study-09-gifgov`, so the reference's name is no longer in the study's web address (a step against the Safe Browsing flag on the shared origin); the old address no longer serves anything.
