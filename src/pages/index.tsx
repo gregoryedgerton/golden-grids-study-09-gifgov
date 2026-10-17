@@ -14,7 +14,7 @@ function App() {
       <HomeNotice />
       <h1 className="visually-hidden">Home</h1>
       <div className="hero-row">
-        <HeroBand title={HERO.title} body={HERO.body} cta={HERO.cta} features={HERO.features} />
+        <HeroBand title={HERO.title} label={HERO.label} body={HERO.body} page={HERO.page} features={HERO.features} />
         <AppCard />
       </div>
       <DebtHelp />

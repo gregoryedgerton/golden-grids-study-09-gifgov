@@ -7,8 +7,10 @@ import { NAV, UTILITY, FOOTER } from "../content";
  * The shell, after IRS.gov's: a thin banner, a dark-blue brand bar with
  * utility links, a primary navigation row with search, a breadcrumb, the
  * page (with a left navigation on inner pages), and a footer of link
- * columns. The reference's banner says "An official website of the United
- * States government"; this one says what this is instead.
+ * columns. The reference opens with a government-website banner; this
+ * study has none, and its own notice says what this is instead. The utility
+ * row has no Sign in, and the closing disclosure names the reference pages
+ * without linking them (see CLAUDE.md, Safe Browsing remediation).
  */
 export function Page({ current, crumbs, side, sideTitle, children }: { current: string; crumbs?: string[]; side?: string[]; sideTitle?: string; children: ReactNode }) {
   return (
@@ -44,7 +46,9 @@ export function Page({ current, crumbs, side, sideTitle, children }: { current: 
           {FOOTER.map(([title, items]) => <section key={title} aria-labelledby={`f-${title}`}><h2 id={`f-${title}`}>{title}</h2><ul>{items.map((i) => <li key={i}>{i}</li>)}</ul></section>)}
         </div>
       </footer>
-      <StudyDisclosure />
+      <StudyDisclosure>
+        <p><strong>Why nothing here links to IRS.gov.</strong> The pages this study follows are named but not linked. A page styled after a government payments and account site that links to that site can be flagged as phishing by automated scanners, as the address these studies share was in October 2026, so the study does not link out to it. For the same reason it has no sign-in, payment or download control, even an inert one: where IRS.gov has such a control, a line of plain text says what the reference offers there. The addresses are listed in the study's repository.</p>
+      </StudyDisclosure>
     </>
   );
 }

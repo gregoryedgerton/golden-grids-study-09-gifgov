@@ -4,8 +4,10 @@ Guidance for agents working in a Golden Grids layout study.
 
 ## What this repo is
 
-Study 09: three pages of IRS.gov — home, Make a payment, Online account for
-individuals — rebuilt as stacked golden grids under the GIF.gov brand.
+Study 09: three pages of IRS.gov — home, Make a payment (the study's
+Payments), Online account for individuals — rebuilt as stacked golden grids
+under the GIF.gov brand. Read "Safe Browsing remediation (2026-10)" at the
+end of this file before changing any copy or control.
 THREE pages (`index.html`, `payments.html`, `account.html`), Vite entries
 with plain links. `src/lib/Page.tsx` is the shell (banner, brand bar,
 navigation, breadcrumb, left navigation, footer); `src/bands/bands.tsx` the
@@ -149,15 +151,21 @@ README: the smallest line, and that no screen-reader user has tested it.
 - The TEXT is the IRS's, public domain as a U.S. government work (17 U.S.C.
   §105), and that is this study's exception to "substitute every asset".
   Use it shortened and rearranged; do not invent facts, limits, fees or
-  phone numbers; check any claim against `captures/reference-*.txt`; link
-  each page where its text appears and print the IRS's reviewed-on date.
+  phone numbers; check any claim against `captures/reference-*.txt`; name
+  each page where its text appears (never link it) and print the IRS's
+  reviewed-on date. Where the reference invites the reader to sign in,
+  create an account, pay, check a refund or get a PIN, give the same facts
+  as description.
 - NOT a government website, and it must never look like one: the banner at
   the top says so on every page; the brand is GIF.gov; no IRS seal, logo
-  or mark; no control signs in, pays, downloads or submits, and each such
-  control says so where it stands.
+  or mark, no "official website" banner, no lock or https explainer. There
+  is no control that signs in, pays, downloads or submits, not even an
+  inert one that says so: where the reference has one, a line of plain text
+  says what IRS.gov offers there.
 - Each band's first item is the hero and carries the reference's fuller
   text; the others show one line and open their list with More. Where the
-  reference links, the square links (`href`/`cta` on a Fact).
+  reference links to one of the study's three pages, the square links
+  (`href`/`cta` on a Fact), and `cta` is the page's name, never an action.
 - Below desktop a five- or six-square band splits into two grids (`Grids`);
   never shrink a range to make a heading fit.
 - Register from measurement (`captures/tokens.json`): USWDS as IRS.gov
@@ -224,9 +232,10 @@ Two geometry rules, verified against source, that every band relies on:
   search, its tabs. Do not write "layout study", a study number or the
   reference's name there; the notice above and the disclosure below say that
   on every page. (Greg, 2026-10-09.)
-- **Nothing links to the reference except the notice and the disclosure.** No
-  link in the header, the nav, a band, an opened cell or the footer goes to
-  the site being studied or its apps. Nav items are the reference's own, for
+- **Nothing links to the reference except the notice and the disclosure.** In
+  this study not even those do, since 2026-10-17 (see Safe Browsing
+  remediation below). No link in the header, the nav, a band, an opened
+  cell or the footer goes to the site being studied or its apps. Nav items are the reference's own, for
   show (plain text); only an item that leads to one of the study's own pages
   or sections is a link. Credits for photographs, maps and facts from other
   sources may link to those sources. (Greg, 2026-10-09.)
@@ -275,3 +284,61 @@ opened in StackBlitz at `https://stackblitz.com/~/github.com/gregoryedgerton/gol
 - Do not append `?file=` to the `~/github.com` link; it made the IDE fail to
   start in testing. The classic `/github/` importer accepts `?file=` but waits
   on a WebSocket and can stall at "Cloning repo from GitHub".
+
+## Safe Browsing remediation (2026-10)
+
+On 2026-10-17 Google Safe Browsing flagged the whole origin
+gregoryedgerton.github.io, every study and the marketing site, as social
+engineering. The first trigger was the demo bank sign-in in Study 19
+(GIFbank), since removed; see that repo's CLAUDE.md for the precedent this
+section follows. Nothing was ever collected here, but the scanner reads
+appearance, and a tax and government-payments lookalike is a classic phishing
+theme, so the bar in this study is high.
+
+**What changed**
+- The utility bar has no "Sign in" (`UTILITY`, `src/content.ts`).
+- The account page's "Sign in or create account" button is gone; in its
+  place `AccountIntro` (`src/lib/modules.tsx`) prints `ACCOUNT.where`, a line
+  of plain text: on IRS.gov this is where the online account begins, and
+  GIF.gov has no accounts and asks for no information.
+- The home hero's "Create account" button is a plain text link to the
+  study's account page, labelled with the page's name (`HERO.page`), and the
+  headline is "What an account holds" (the reference's is "Do more with an
+  IRS account").
+- The app card has no "Get the official app" button, and its phone drawing
+  no "Sign in to your account" and "Continue as guest" buttons: the phone
+  lists what the app holds (`HERO.app.holds`, `.card__phone-line`) and a note
+  says the reference's card leads to the IRS's app and nothing here
+  downloads. The `.btn` classes are gone from `styles.css`; the `--cta2-*`
+  tokens remain for the expanded cell's Close.
+- The payments page is named Payments (h1, `study.json` page label, nav item
+  that was "Pay"); the reference heads it "Make a payment". The two
+  bank-account cards (`BankBand`, `src/bands/bands.tsx`) are named Online
+  account and Direct Pay, their "Sign in or create account" and "Pay through
+  Direct Pay" links are gone, and the card's foot carries `where` as
+  non-interactive `source` text ("On IRS.gov, where Direct Pay begins").
+- Lines that invited the reader to act (check a refund, get an IP PIN, sign
+  in, pay, submit a form, "Make a payment", "Try the tax debt help tool") are
+  recast as description with the same facts; the account page's section
+  headings are nouns (Tax records, Payments, Forms) rather than the
+  reference's actions. Internal links carry page or section names
+  (Payments, Online account for individuals, If you can't pay now). The
+  News cards' unused `cta` strings ("Sign up now" and others) were removed.
+- No IRS address is in the build: `SOURCE` (`content.ts`) and `study.json`
+  pages and assets have no `url`, and the home notice no longer links to
+  trumpaccounts.gov. The closing disclosure (`Page.tsx`, as children of
+  `StudyDisclosure`) says why ("Why nothing here links to IRS.gov"); the
+  README keeps the addresses. Check with
+  `grep -rnE "\.gov/|https?://[a-z.]*\.gov" dist` after building (the wordmark
+  text "GIF.gov" is not an address).
+
+**Never bring back**, in this study or a sibling: a sign-in, create-account,
+pay, guest-pay, app-download or form-submit control, even an inert one
+labelled as doing nothing, or anything drawn to look like one (a button-styled
+span in a phone or card drawing counts); an input other than the header's
+search box; any link to IRS.gov, another .gov account or payments site, or an
+app store; action labels on internal links ("Make a payment", "Create
+account"); an "An official website of the United States government" banner,
+a lock or https explainer, or anything seal-like. The study banner and the
+closing disclosure stay. After deploying, Greg requests a review in Google
+Search Console (Security Issues) so the flag is lifted.

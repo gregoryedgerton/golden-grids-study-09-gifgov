@@ -6,41 +6,38 @@
   "pages": {
     "account": "Online account for individuals",
     "index": "Home",
-    "payments": "Make a payment"
+    "payments": "Payments"
   },
-  "summary": "Three pages of IRS.gov (the home page, Make a payment, and Online account for individuals) rebuilt as stacked golden grids. The words are the IRS's; the site around them is not.",
+  "summary": "Three pages of IRS.gov (the home page, the payments page, and Online account for individuals) rebuilt as stacked golden grids. The words are the IRS's; the site around them is not.",
   "reviewed": {
     "date": "October 7, 2026",
-    "method": "Captured at 390, 820 and 1440 pixels, with each page's main text saved alongside. The IRS's own last-reviewed dates are printed on the pages that carry them.",
+    "method": "Captured at 390, 820 and 1440 pixels, with each page's main text saved alongside. The IRS's own last-reviewed dates are printed on the pages that carry them. The pages are named here but not linked: a lookalike of a government payments and account site that links to the real one reads as phishing to automated scanners, which flagged the address these studies share in October 2026. The repository's README lists the addresses.",
     "pages": [
       {
-        "label": "IRS.gov, home page",
-        "url": "https://www.irs.gov/"
+        "label": "IRS.gov, home page"
       },
       {
-        "label": "IRS.gov, Make a payment",
-        "url": "https://www.irs.gov/payments"
+        "label": "IRS.gov, payments page (headed Make a payment)"
       },
       {
-        "label": "IRS.gov, Online account for individuals",
-        "url": "https://www.irs.gov/payments/online-account-for-individuals"
+        "label": "IRS.gov, Online account for individuals"
       }
     ]
   },
   "real": [
-    "The text. It is the Internal Revenue Service's, a work of the United States government in the public domain (17 U.S.C. § 105), shortened and rearranged but not reworded in substance.",
+    "The text. It is the Internal Revenue Service's, a work of the United States government in the public domain (17 U.S.C. § 105), shortened and rearranged. Where the reference asks the reader to sign in, create an account, pay, check a refund or get a PIN, the same facts are given as description instead.",
     "The limits, fees and dates, as those pages gave them on the day they were captured. They may have changed; check IRS.gov."
   ],
   "invented": [
     "The site. GIF.gov is a parody name made for this study; it is not an agency, and this is not a government website.",
-    "Every control. Nothing here signs anyone in, files a return, makes a payment or downloads a form.",
+    "The controls. There is no sign-in, account creation, payment or app download anywhere in the study, not even an inert one, and the only field is the header's search box, which sends nothing. Where the reference has such a control, a line of plain text says what IRS.gov offers there, and a link to another of the study's pages carries that page's name.",
+    "Some names and headings. The reference's Make a payment is named Payments, its Do more with an IRS account is What an account holds, its two bank-account cards are named Online account and Direct Pay, and its account section headings (Access tax records, Make and view payments) are given as nouns.",
     "The icons, which were drawn for the study. No IRS seal, logo or mark is used."
   ],
   "assets": [
     {
       "what": "Text",
       "source": "Internal Revenue Service, IRS.gov",
-      "url": "https://www.irs.gov/",
       "licence": "public domain, U.S. government work"
     },
     {
@@ -59,5 +56,5 @@
   ],
   "owner": "the Internal Revenue Service, the Department of the Treasury or any government agency",
   "repo": "https://github.com/gregoryedgerton/golden-grids-study-09-irs",
-  "updated": "October 9, 2026"
+  "updated": "October 17, 2026"
 }

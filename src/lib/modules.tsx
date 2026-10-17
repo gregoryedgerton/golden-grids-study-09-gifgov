@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { NOTICE, DEBT_HELP, HELP, HELP_TABS, HERO, PAY, ACCOUNT, SOURCE } from "../content";
 
-/** The flat modules, as the reference has them: a notice strip, a callout, a tabbed accordion, a card, a side column, a reviewed-on line. */
-export function Notice({ title, body, link }: { title: string; body: string; link?: { label: string; url: string } }) {
-  return <aside className="notice" aria-label={title}><p><strong>{title}</strong> {body}{link && <> <span className="showonly">{link.label}</span></>}</p></aside>;
+/**
+ * The flat modules, as the reference has them: a notice strip, a callout, a
+ * tabbed accordion, a card, a side column, a reviewed-on line. Where the
+ * reference has a control that signs in, pays or downloads, there is a line
+ * of plain text saying what IRS.gov offers there (see CLAUDE.md, Safe
+ * Browsing remediation); nothing here is, or is drawn as, such a control.
+ */
+export function Notice({ title, body }: { title: string; body: string }) {
+  return <aside className="notice" aria-label={title}><p><strong>{title}</strong> {body}</p></aside>;
 }
 export const HomeNotice = () => <Notice {...NOTICE} />;
 
@@ -12,9 +18,8 @@ export function AppCard() {
     <section className="card card--app" aria-labelledby="app-title">
       <h2 id="app-title">{HERO.app.title}</h2>
       <p>{HERO.app.body}</p>
-      <div className="card__phone" aria-hidden="true"><span>GIF.gov</span><span className="card__phone-btn">Sign in to your account</span><span className="card__phone-btn card__phone-btn--ghost">Continue as guest</span></div>
-      <button type="button" className="btn btn--ghost">{HERO.app.cta}</button>
-      <p className="note">A fictional app for a layout study; the button does nothing.</p>
+      <div className="card__phone" aria-hidden="true"><span>GIF.gov</span>{HERO.app.holds.map((h) => <span key={h} className="card__phone-line">{h}</span>)}</div>
+      <p className="note">{HERO.app.note}</p>
     </section>
   );
 }
@@ -23,7 +28,7 @@ export function DebtHelp() {
   return (
     <section className="callout" aria-labelledby="debt-title">
       <h2 id="debt-title">{DEBT_HELP.title}</h2>
-      <div><p>{DEBT_HELP.body}</p><a href="./payments.html#cant">{DEBT_HELP.cta}</a></div>
+      <div><p>{DEBT_HELP.body}</p><a href="./payments.html#cant">{DEBT_HELP.page}</a></div>
     </section>
   );
 }
@@ -71,8 +76,7 @@ export function AccountIntro() {
     <>
       <Notice title={ACCOUNT.notice.title} body={ACCOUNT.notice.body} />
       <p className="intro">{ACCOUNT.intro}</p>
-      <p><button type="button" className="btn" aria-describedby="signin-note">{ACCOUNT.cta}</button></p>
-      <p id="signin-note" className="note">On IRS.gov this signs in; here it does nothing. {ACCOUNT.identity}</p>
+      <p className="where">{ACCOUNT.where}</p>
     </>
   );
 }

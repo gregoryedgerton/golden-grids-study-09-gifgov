@@ -66,8 +66,8 @@ export function FactsBand({ id, kicker, title, lesson, facts, desktop, mobile, a
   );
 }
 
-/** Home: the account hero — the headline in the hero square, the four things an account does around it. */
-export function HeroBand({ title, body, cta, features }: { title: string; body: string; cta: string; features: Fact[] }) {
+/** Home: the account hero — the headline in the hero square, the four things an account does around it. Its foot links to the study's account page, by the page's name. */
+export function HeroBand({ title, label, body, page, features }: { title: string; label: string; body: string; page: string; features: Fact[] }) {
   const v = useViewport();
   const [placement, cw] = orient(v, ["top", true], ["right", true]);
   return (
@@ -76,10 +76,10 @@ export function HeroBand({ title, body, cta, features }: { title: string; body: 
         <GoldenBox key="h">
           <div className="box box--blue">
             <Imprint name="account" />
-            <p className="box__label">Individual, Business or Tax Pro Account</p>
+            <p className="box__label">{label}</p>
             <div className="box__fit"><FitLine>{title}</FitLine></div>
             <div className="box__body"><p>{body}</p></div>
-            <div className="box__foot"><a className="btn btn--on-blue" href="./account.html">{cta}</a></div>
+            <div className="box__foot"><a className="more more--link" href="./account.html">{page}</a></div>
           </div>
         </GoldenBox>,
         ...features.map((f, i) => <GoldenBox key={i}><FactCard fact={f} /></GoldenBox>),
@@ -91,21 +91,26 @@ export function HeroBand({ title, body, cta, features }: { title: string; body: 
 import { Fit } from "../lib/fit";
 function FitLine({ children }: { children: string }) { return <Fit as="p" className="fit--head" min={8} max={120}>{children}</Fit>; }
 
-/** Payments: the two ways to pay by bank account, with their limits. */
+/**
+ * Payments: the two ways to pay by bank account, with their limits. On
+ * IRS.gov each card ends in a control that signs in or opens Direct Pay;
+ * here, where that control stood, a plain line in the card's foot says what
+ * the reference offers there. Nothing in the band is a control that pays.
+ */
 export function BankBand({ account, guest, numbers, title, body }: {
   title: string; body: string; numbers: Fact[];
-  account: { title: string; tag: string; features: string[]; accepted: string; cta: string };
-  guest: { title: string; sub: string; features: string[]; accepted: string; cta: string };
+  account: { title: string; tag: string; features: string[]; accepted: string; where: string };
+  guest: { title: string; sub: string; features: string[]; accepted: string; where: string };
 }) {
   const v = useViewport();
   const x = useExpandGroup();
   const [placement, cw] = orient(v, ["left", true], ["bottom", true]);
-  const card = (key: string, c: { title: string; tag?: string; sub?: string; features: string[]; accepted: string; cta: string }) => (
+  const card = (key: string, c: { title: string; tag?: string; sub?: string; features: string[]; accepted: string; where: string }) => (
     <GoldenBox key={key} {...x.boxProps(key)}>
       <FactBox imprint={<Imprint name={key === "account" ? "account" : "guest"} />} label={c.tag ?? c.sub} fitClass="fit--head" max={120}
         body={<><p className="box__body--short box__body--untall">{c.features[0]}. {c.accepted}.</p><ul className="box__body--long box__body--tall box__list">{c.features.map((f) => <li key={f}>{f}</li>)}<li><strong>{c.accepted}</strong></li></ul></>}
-        link={{ href: "#", label: c.cta, aria: `${c.cta} (does nothing in this study)` }}
-        expand={{ group: x, slotKey: key, title: c.title, full: <div className="cell__body"><p className="cell__kicker">Key features</p><ul>{c.features.map((f) => <li key={f}>{f}</li>)}</ul><p><strong>Tax payments accepted:</strong> {c.accepted}.</p><p className="note">The control on IRS.gov signs in or opens Direct Pay; here it does nothing.</p></div> }}>
+        source={c.where}
+        expand={{ group: x, slotKey: key, title: c.title, full: <div className="cell__body"><p className="cell__kicker">Key features</p><ul>{c.features.map((f) => <li key={f}>{f}</li>)}</ul><p><strong>Tax payments accepted:</strong> {c.accepted}.</p><p className="note">{c.where}. GIF.gov takes no payments and asks for no information.</p></div> }}>
         {c.title}
       </FactBox>
     </GoldenBox>
@@ -129,7 +134,7 @@ export function FeaturesBand({ id, title, lesson, features, desktop, mobile }: {
       <Grids placement={placement} cw={cw} split={v !== "desktop"} boxes={features.map((f, i) => (
         <GoldenBox key={f.id} {...x.boxProps(f.id)}>
           <span id={f.id} className="anchor" />
-          <FactBox imprint={f.icon ? <Imprint name={f.icon} /> : undefined} label="In your account" fitClass={i === 0 ? "fit--head" : "fit--title"} max={120}
+          <FactBox imprint={f.icon ? <Imprint name={f.icon} /> : undefined} label="In the online account" fitClass={i === 0 ? "fit--head" : "fit--title"} max={120}
             body={<><p className="box__body--short box__body--untall">{f.items[0]}.</p><ul className="box__body--long box__body--tall box__list">{f.items.map((it) => <li key={it}>{it}</li>)}</ul></>}
             expand={{ group: x, slotKey: f.id, title: f.title, full: <div className="cell__body"><ul>{f.items.map((it) => <li key={it}>{it}</li>)}</ul></div> }}>
             {f.line}
